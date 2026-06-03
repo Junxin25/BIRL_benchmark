@@ -255,7 +255,7 @@ def grouping_cumulative(df, col_index, col_column):
     for idx, dfg in df[[col_index, col_column]].groupby(col_index):
         counts = dict(Counter(dfg[col_column]))
         counts[col_index] = idx
-        df_counts = df_counts.append(counts, ignore_index=True)
+        df_counts = pd.concat([df_counts, pd.DataFrame([counts])], ignore_index=True)
     df_counts.set_index(col_index, inplace=True)
     return df_counts
 

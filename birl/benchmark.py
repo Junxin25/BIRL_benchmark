@@ -328,7 +328,7 @@ class ImRegBenchmark(Experiment):
         iter_table = ((idx, dict(row)) for idx, row, in input_table.iterrows())
         for res in iterate_mproc_map(method, iter_table, nb_workers=nb_workers, desc=desc):
             if res is not None and aggr_experiments:
-                self._df_experiments = self._df_experiments.append(res, ignore_index=True)
+                self._df_experiments = pd.concat([self._df_experiments, pd.DataFrame([res])], ignore_index=True)
                 self.__export_df_experiments(path_csv)
         self._main_thread = True
 
@@ -1010,7 +1010,7 @@ def export_summary_results(
     if 'ID' in df_experiments.columns:
         df_experiments.set_index('ID', inplace=True)
     df_summary = df_experiments.describe(percentiles=costume_percentiles).T
-    df_summary['median'] = df_experiments.median()
+    df_summary['median'] = df_experiments.median(numeric_only=True)
     nb_missing = np.sum(df_experiments['IRE Mean'].isnull())\
         if 'IRE Mean' in df_experiments.columns else len(df_experiments)
     df_summary['missing'] = nb_missing / float(len(df_experiments))
