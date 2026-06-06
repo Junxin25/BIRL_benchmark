@@ -1,0 +1,2 @@
+Target image,Source image,Target landmarks,Source landmarks,Image diagonal [pixels],Image size [pixels],status
+COAD_01/scale-25pc/S1.jpg,COAD_01/scale-25pc/S3.jpg,COAD_01/scale-25pc/S1.csv,COAD_01/scale-25pc/S3.csv,17347.5,"(13812, 10496)",training

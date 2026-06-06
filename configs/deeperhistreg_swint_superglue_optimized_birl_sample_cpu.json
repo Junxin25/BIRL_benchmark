@@ -1,0 +1,60 @@
+{
+  "device": "cpu",
+  "echo": false,
+  "save_final_images": true,
+  "save_final_displacement_field": true,
+  "case_name": "Default_SwinT_SuperGlue",
+  "logging_path": null,
+  "loading_params": {
+    "final_level": 0,
+    "pad_value": 0.0,
+    "loader": "pil",
+    "source_resample_ratio": 0.2,
+    "target_resample_ratio": 0.2
+  },
+  "saving_params": {
+    "saver": "pil",
+    "final_saver": "pil",
+    "save_params": "pil",
+    "extension": ".jpg",
+    "final_extension": ".png"
+  },
+  "preprocessing_params": {
+    "preprocessing_function": "basic_preprocessing",
+    "initial_resampling": true,
+    "initial_resolution": 2048,
+    "normalization": true,
+    "convert_to_gray": true,
+    "clahe": true,
+    "save_results": true,
+    "flip_intensity": true
+  },
+  "run_initial_registration": true,
+  "initial_registration_params": {
+    "save_results": true,
+    "save_intermediate": true,
+    "initial_registration_function": "swint_superpoint_superglue",
+    "swint_superpoint_weights_path": "/home/junxinfu/superpoint/pytorch-superpoint/logs/superpoint_swint_coco_joint_20260517_200945/checkpoints/superPointNet_50000_checkpoint.pth.tar",
+    "superglue_weights_path": "/home/junxinfu/registration/Model/DeeperHistReg/deeperhistreg/dhr_models/superglue_outdoor.pth",
+    "nms_dist": 4,
+    "conf_thresh": 0.01,
+    "nn_thresh": 0.6,
+    "registration_size": [
+      224,
+      320
+    ],
+    "sinkhorn_iterations": 30,
+    "match_threshold": 0.1,
+    "cuda": false,
+    "device": "cpu",
+    "echo": false,
+    "show": false,
+    "return_num_matches": false,
+    "transform_type": "affine"
+  },
+  "run_nonrigid_registration": false,
+  "nonrigid_registration_params": {
+    "save_results": false,
+    "device": "cpu"
+  }
+}
