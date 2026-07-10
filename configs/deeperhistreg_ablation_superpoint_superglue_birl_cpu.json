@@ -1,0 +1,57 @@
+{
+  "device": "cpu",
+  "echo": false,
+  "save_final_images": false,
+  "save_final_displacement_field": true,
+  "case_name": "Ablation_SuperPoint_SuperGlue",
+  "logging_path": null,
+  "loading_params": {
+    "final_level": 0,
+    "pad_value": 0.0,
+    "loader": "pil",
+    "source_resample_ratio": 0.2,
+    "target_resample_ratio": 0.2
+  },
+  "saving_params": {
+    "saver": "pil",
+    "final_saver": "pil",
+    "save_params": "pil",
+    "extension": ".jpg",
+    "final_extension": ".png"
+  },
+  "preprocessing_params": {
+    "preprocessing_function": "basic_preprocessing",
+    "initial_resampling": true,
+    "initial_resolution": 2048,
+    "normalization": true,
+    "convert_to_gray": true,
+    "clahe": true,
+    "save_results": true,
+    "flip_intensity": true
+  },
+  "run_initial_registration": true,
+  "initial_registration_params": {
+    "save_results": true,
+    "save_intermediate": false,
+    "initial_registration_function": "superpoint_superglue",
+    "superpoint_weights_path": "/home/junxinfu/registration/Model/DeeperHistReg/deeperhistreg/dhr_models/superpoint_v1.pth",
+    "superglue_weights_path": "/home/junxinfu/registration/Model/DeeperHistReg/deeperhistreg/dhr_models/superglue_outdoor.pth",
+    "nms_radius": 4,
+    "keypoint_threshold": 0.005,
+    "max_keypoints": 3000,
+    "registration_size": 620,
+    "sinkhorn_iterations": 30,
+    "match_threshold": 0.1,
+    "cuda": false,
+    "device": "cpu",
+    "echo": false,
+    "show": false,
+    "return_num_matches": false,
+    "transform_type": "affine"
+  },
+  "run_nonrigid_registration": false,
+  "nonrigid_registration_params": {
+    "save_results": false,
+    "device": "cpu"
+  }
+}

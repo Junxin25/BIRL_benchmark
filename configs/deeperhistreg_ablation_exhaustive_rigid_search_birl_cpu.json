@@ -1,0 +1,52 @@
+{
+  "device": "cpu",
+  "echo": false,
+  "save_final_images": true,
+  "save_final_displacement_field": true,
+  "case_name": "Ablation_Exhaustive_Rigid_Search",
+  "logging_path": null,
+  "loading_params": {
+    "final_level": 0,
+    "pad_value": 0.0,
+    "loader": "pil",
+    "source_resample_ratio": 0.2,
+    "target_resample_ratio": 0.2
+  },
+  "saving_params": {
+    "saver": "pil",
+    "final_saver": "pil",
+    "save_params": "pil",
+    "extension": ".jpg",
+    "final_extension": ".png"
+  },
+  "preprocessing_params": {
+    "preprocessing_function": "basic_preprocessing",
+    "initial_resampling": true,
+    "initial_resolution": 2048,
+    "normalization": true,
+    "convert_to_gray": true,
+    "clahe": true,
+    "save_results": true,
+    "flip_intensity": true
+  },
+  "run_initial_registration": true,
+  "initial_registration_params": {
+    "save_results": true,
+    "save_intermediate": false,
+    "initial_registration_function": "exhaustive_rigid_search",
+    "registration_size": 620,
+    "angle_step": 60,
+    "cost_function": "ncc_local",
+    "cost_function_params": {
+      "win_size": 7
+    },
+    "affine_iters": 200,
+    "device": "cpu",
+    "echo": false
+  },
+  "run_nonrigid_registration": false,
+  "nonrigid_registration_params": {
+    "save_results": false,
+    "device": "cpu"
+  }
+}

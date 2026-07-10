@@ -1,0 +1,6 @@
+Target image,Source image,Target landmarks,Source landmarks,Image diagonal [pixels],Image size [pixels],status
+COAD_01/scale-25pc/S1.jpg,COAD_01/scale-25pc/S3.jpg,COAD_01/scale-25pc/S1.csv,COAD_01/scale-25pc/S3.csv,17347.5,"(13812, 10496)",training
+COAD_01/scale-25pc/S1.jpg,COAD_01/scale-25pc/S6.jpg,COAD_01/scale-25pc/S1.csv,COAD_01/scale-25pc/S6.csv,17347.5,"(13812, 10496)",training
+COAD_01/scale-25pc/S1.jpg,COAD_01/scale-25pc/S7.jpg,COAD_01/scale-25pc/S1.csv,COAD_01/scale-25pc/S7.csv,17347.5,"(13812, 10496)",training
+COAD_01/scale-25pc/S3.jpg,COAD_01/scale-25pc/S6.jpg,COAD_01/scale-25pc/S3.csv,COAD_01/scale-25pc/S6.csv,17739.5,"(14131, 10724)",training
+COAD_01/scale-25pc/S3.jpg,COAD_01/scale-25pc/S7.jpg,COAD_01/scale-25pc/S3.csv,COAD_01/scale-25pc/S7.csv,17739.5,"(14131, 10724)",training
