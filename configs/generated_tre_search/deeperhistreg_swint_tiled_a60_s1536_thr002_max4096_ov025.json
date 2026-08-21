@@ -1,0 +1,70 @@
+{
+  "device": "cuda:0",
+  "echo": false,
+  "save_final_images": true,
+  "save_final_displacement_field": true,
+  "case_name": "SwinT_SuperGlue_NoMask_Tiled_GPU_FlipFalse",
+  "logging_path": null,
+  "loading_params": {
+    "final_level": 0,
+    "pad_value": 0.0,
+    "loader": "pil",
+    "source_resample_ratio": 0.2,
+    "target_resample_ratio": 0.2
+  },
+  "saving_params": {
+    "saver": "pil",
+    "final_saver": "pil",
+    "save_params": "pil",
+    "extension": ".jpg",
+    "final_extension": ".png"
+  },
+  "preprocessing_params": {
+    "preprocessing_function": "basic_preprocessing",
+    "initial_resampling": true,
+    "initial_resolution": 2048,
+    "normalization": true,
+    "convert_to_gray": true,
+    "clahe": true,
+    "save_results": true,
+    "flip_intensity": false
+  },
+  "run_initial_registration": true,
+  "initial_registration_params": {
+    "save_results": true,
+    "save_intermediate": true,
+    "initial_registration_function": "swint_superpoint_superglue_nomask_tiled",
+    "swint_superpoint_weights_path": "/home/junxinfu/superpoint/pytorch-superpoint/logs/superpoint_swint_coco_joint_20260517_200945/checkpoints/superPointNet_50000_checkpoint.pth.tar",
+    "superglue_weights_path": "/home/junxinfu/registration/Model/DeeperHistReg/deeperhistreg/dhr_models/superglue_outdoor.pth",
+    "nms_dist": 4,
+    "conf_thresh": 0.01,
+    "nn_thresh": 0.6,
+    "registration_size": 1536,
+    "sinkhorn_iterations": 30,
+    "match_threshold": 0.02,
+    "cuda": true,
+    "device": "cuda:0",
+    "echo": true,
+    "show": false,
+    "return_num_matches": false,
+    "transform_type": "affine",
+    "angle_step": 60,
+    "use_keypoint_mask_filtering": false,
+    "mask_erosion_pixels": 0,
+    "use_tiled_keypoints": true,
+    "tile_size": [
+      224,
+      320
+    ],
+    "tile_overlap": 0.25,
+    "global_nms_dist": 4,
+    "max_keypoints": 4096,
+    "tile_border_remove": 16,
+    "tile_pad_value": 0.0
+  },
+  "run_nonrigid_registration": false,
+  "nonrigid_registration_params": {
+    "save_results": false,
+    "device": "cuda:0"
+  }
+}
